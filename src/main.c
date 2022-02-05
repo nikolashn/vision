@@ -8,12 +8,11 @@
 #include "stdio.h"
 
 #include "ctx.h"
+struct Ctx ctx;
+
 #include "callbacks.h"
 
 int main() {
-	struct Ctx ctx;
-	ctx.pressedCnt = 0;
-
 	if (!glfwInit()) {
 		printf("Error: Could not start GLFW3\n");
 		return 1;
@@ -31,6 +30,7 @@ int main() {
 	}
 	glfwMakeContextCurrent(window);
 	glfwSetWindowSizeCallback(window, CallbackWindowSize);
+	glfwSetKeyCallback(window, CallbackKey);
 
 	glewInit();
 
@@ -89,8 +89,8 @@ int main() {
 		glUseProgram(shaderProgram);
 		glBindVertexArray(vao);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glfwPollEvents();
 		glfwSwapBuffers(window);
+		glfwWaitEvents();
 	}
 
 	glfwTerminate();
