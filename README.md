@@ -1,7 +1,7 @@
 # vision
 Drawing program
 
-# Installation
+## Installation
 Requires a C compiler, GNU make, GLEW and GLFW3.
 Run (as root):
 ```
