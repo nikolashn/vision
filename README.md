@@ -9,17 +9,17 @@ make install
 ```
 
 ## Keybinds
-h: scroll left
+h: scroll left (H: x2 speed)
 
-j: scroll down
+j: scroll down (J: x2 speed)
 
-k: scroll up
+k: scroll up (K: x2 speed)
 
-l: scroll right
+l: scroll right (L: x2 speed)
 
-J: zoom out
+{: zoom in (also +)
 
-K: zoom in
+}: zoom in (also -)
 
 ZZ: exit
 
