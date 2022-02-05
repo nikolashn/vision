@@ -8,6 +8,7 @@
 #include "stdio.h"
 
 #include "ctx.h"
+#include "callbacks.h"
 
 int main() {
 	struct Ctx ctx;
@@ -29,6 +30,7 @@ int main() {
 		return 1;
 	}
 	glfwMakeContextCurrent(window);
+	glfwSetWindowSizeCallback(window, CallbackWindowSize);
 
 	glewInit();
 
