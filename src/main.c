@@ -11,6 +11,8 @@
 struct Ctx ctx;
 
 #include "callbacks.h"
+#include "modes.h"
+#include "tools.h"
 
 int main() {
 	ctx.canvasMaxX = 640;
@@ -18,6 +20,8 @@ int main() {
 	ctx.centerX = 320;
 	ctx.centerY = 240;
 	ctx.zoomFact = 1.0f;
+	ctx.mode = VISION_MODE_TOOL;
+	ctx.pixels = malloc(ctx.canvasMaxX*ctx.canvasMaxY);
 
 	if (!glfwInit()) {
 		printf("Error: Could not start GLFW3\n");
@@ -37,6 +41,7 @@ int main() {
 	glfwMakeContextCurrent(window);
 	glfwSetWindowSizeCallback(window, CallbackWindowSize);
 	glfwSetKeyCallback(window, CallbackKey);
+	glfwSetCharCallback(window, CallbackChar);
 
 	glewInit();
 
@@ -119,6 +124,7 @@ int main() {
 		glfwWaitEvents();
 	}
 
+	free(ctx.pixels);
 	glfwTerminate();
 
 	return 0;

@@ -7,6 +7,9 @@ struct Ctx {
 	int canvasMaxX, canvasMaxY;
 	float centerX, centerY;
 	float zoomFact;
+	int mode;
+	int tool; // TODO: tool settings (thickness, etc)
+	int* pixels;
 };
 
 #endif
