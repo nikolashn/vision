@@ -10,11 +10,20 @@ make install
 
 ## Keybinds
 h: scroll left
+
 j: scroll down
+
 k: scroll up
+
 l: scroll right
+
 J: zoom out
+
 K: zoom in
+
 ZZ: exit
+
 ZQ: exit
+
 zz: center and reset zoom
+
